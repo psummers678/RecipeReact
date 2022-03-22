@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipeInterface from '../models/RecipeInterface';
 import RecipeService from '../service/RecipeService';
+import RecipeTableEntry from './RecipeTableEntry';
 
 
 
@@ -65,15 +66,8 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
                 </thead>
                 <tbody>
                     {this.state.recipes.map((recipe) => {
-                        return (
-                        <tr>
-                            <td>{recipe.recipeName}</td>
-                            <td>{recipe.recipeDurationMins}</td>
-                            <td>{recipe.rating}</td>
-                            <td>{recipe.difficulty}</td>
-                        </tr>)
+                        return (<RecipeTableEntry recipe={recipe} />)
                     })}
-
                 </tbody>
             </table>
         )
