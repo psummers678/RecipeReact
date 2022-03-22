@@ -1,0 +1,13 @@
+jkh
+
+axios to retrieve data from Backend
+
+Fat Arrow Functions
+bind 
+
+this.props.match.params.id -> Match id in params
+
+Formik to use Forms
+
+
+React JS Tutorial

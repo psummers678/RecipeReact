@@ -1,0 +1,65 @@
+
+Recipe App {
+    Header 
+    One of 
+        - List of Recipes
+        - List of Ingredients
+        - Single Recipe
+        - Single Ingredient 
+        etc
+    Footer
+}
+
+Header / Navbar
+Home / Recipes / Ingredients -> About
+
+Footer
+Github Repo -> who
+
+
+List of Recipes {
+    General Info 
+    Filters and ordering **
+    Table Headers 
+    Table Rows { Recipe Table Info ???}
+}
+
+Recipe Table Info{
+    Name 
+    Duration (h/m)
+    Difficulty 
+    Rating
+    Link to Single 
+}
+
+SingleRecipeView {
+
+    Recipe Name: XXXX Duration: Xh Xm
+    Rating : X        Difficulty : X 
+    RecipeIngredient for each RecipeIngredient in List 
+    Recipe Steps
+    Update Button - Move Out?
+    Create Button - Move out
+}
+Recipe Ingredient: {
+    Ingredient Name: XXX  Amount: "XXXX" 
+}
+
+List of Ingredients {
+    General Info
+    Create Button
+    Filter + ordering
+    table Headers
+    Table Rows {
+        IngredientSummary
+        Link
+    }
+}
+
+Ingredient Summary { 
+    Ingredient Name 
+    Ingredient Price
+    Ingredient Shop
+}
+
+
