@@ -62,4 +62,19 @@ Ingredient Summary {
     Ingredient Shop
 }
 
+Single Ingredient  {
+    General Info
+    DetailedIngredientView 
+    Update Button 
+    Create New Button
+    ?? Related Recipes 
+    Sidebar of other ingredients for easy switching 
+}
+
+Detailed Ingredient View{
+    Ingredient Name
+    Ingredient Price
+    Ingredient Shop
+    Inngredient Storage + Shelflife
+}
 
