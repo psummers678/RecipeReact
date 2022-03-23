@@ -1,7 +1,7 @@
 import IngredientInterface from "./IngredientInterface";
 
 interface IngredientRequirementInterface{
-    ingredient: IngredientInterface,
+    // ingredient: String,
     amount: String,
 }
 

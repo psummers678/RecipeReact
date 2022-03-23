@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import RecipeInterface from "../models/RecipeInterface";
 interface RecipeEntry {
     recipe: RecipeInterface
@@ -7,7 +8,7 @@ function RecipeTableEntry(props: RecipeEntry) {
     return (
         <>
             <tr>
-                <td><a href={"http://172.19.145.115:3000/Recipes/"+recipe.recipeId} >{recipe.recipeName} </a></td>
+                <td><Link className="nav-link" to={"/Recipes/"+ recipe.recipeId}>{recipe.recipeName}</Link></td>
                 <td>{recipe.recipeDurationMins}</td>
                 <td>{recipe.rating}</td>
                 <td>{recipe.difficulty}</td>

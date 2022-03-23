@@ -1,4 +1,3 @@
-import IngredientInterface from "./IngredientInterface"
 import IngredientRequirementInterface from "./IngredientRequirementInterface"
 
 

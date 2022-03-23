@@ -26,7 +26,7 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
         };
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         this.retrieveAllRecipes();
     }
 
@@ -37,13 +37,12 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
                 this.setState({
                     recipes: response.data
                 })
-
             })
     }
 
     render(): React.ReactNode {
         return (
-            <table>
+            <table className='.col-md'>
                 <thead>
                     <tr>
                         <th>Recipe Name</th>

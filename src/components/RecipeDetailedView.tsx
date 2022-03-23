@@ -31,6 +31,7 @@ class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe:
             }
         )
     }
+
     render(): React.ReactNode {
         let recipe = this.state.recipe;
         return (
@@ -48,18 +49,22 @@ class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe:
                         </tr>
                     </thead>
                     <tbody>
-
-                        {Object.entries(recipe.ingredientRequirements).map((key, value) => {
-                            return (<>
-                                <tr>
-                                    <td>{key}</td>
-                                    <td>{value}</td>
+                        { Object.entries(recipe.ingredientRequirements).map( ([ingredient, amount]) => {
+                            // ingredient: "1,Steak" 
+                            // amount: "5tsp"#
+                            console.log("SPLIT");
+                            let [ingredientId, ingredientName] = ingredient.replaceAll('"','').split(",");
+                            return (
+                                <tr key={ingredientId}>
+                                    <td>{ingredientName}</td>
+                                    <td>{amount}</td>
                                 </tr>
-                                </>)
+                            )
                         })}
+                
                     </tbody>
                 </table>
-
+                
             </>
         )
     }

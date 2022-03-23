@@ -8,9 +8,8 @@ class RecipeListView extends React.Component<{},{}>{
         return(
             <div className="list-view-container"> 
                 <h1> All Recipes</h1>
-                <div className="flexbox-item flexbox-item-1">
+                <div >
                     <RecipeTable />
-                    
                 </div>
             </div>
         )
