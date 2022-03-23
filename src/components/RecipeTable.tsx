@@ -9,19 +9,6 @@ interface RecipeTableState {
     recipes: RecipeInterface[],
 }
 
-const DummyRecipes: RecipeTableState = {
-    recipes: [
-        {
-            recipeId: 1,
-            recipeName: "Curry",
-            recipeDurationMins: 65,
-            recipeBody: "lkjsadf",
-            ingredientRequirements: { ingredient: { name: "Hello" }, quantity: "tkhl" },
-            difficulty: "FIVE",
-            rating: "FOUR"
-        }]
-}
-
 class RecipeTable extends React.Component<{}, RecipeTableState>{
 
     constructor(props: any) {
@@ -32,7 +19,7 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
                 recipeName: "Dummy",
                 recipeDurationMins: 5,
                 recipeBody: "Blah",
-                ingredientRequirements: { ingredient: { name: "Hello" }, quantity: "tkhl" },
+                ingredientRequirements: [],
                 rating: "FIVE",
                 difficulty: "FOUR",
             }],
@@ -46,11 +33,12 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
     retrieveAllRecipes(): void {
         RecipeService.retrieveAllRecipes().then(
             response => {
+                //ingredientRequirements seem is {String string} still
                 this.setState({
                     recipes: response.data
                 })
-            }
-        )
+
+            })
     }
 
     render(): React.ReactNode {
@@ -62,14 +50,15 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
                         <th>Recipe Duration</th>
                         <th>Recipe Rating</th>
                         <th>Recipe Difficulty</th>
+                        <th>Number of Ingredients</th>
                     </tr>
                 </thead>
                 <tbody>
                     {this.state.recipes.map((recipe) => {
-                        return (<RecipeTableEntry recipe={recipe} />)
+                        return (<RecipeTableEntry recipe={recipe} key={recipe.recipeId} />)
                     })}
                 </tbody>
-            </table>
+            </table >
         )
     }
 }
