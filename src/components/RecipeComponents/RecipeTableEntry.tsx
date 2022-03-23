@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RecipeInterface from "../models/RecipeInterface";
+import RecipeInterface from "../../models/RecipeInterface";
 interface RecipeEntry {
     recipe: RecipeInterface
 }

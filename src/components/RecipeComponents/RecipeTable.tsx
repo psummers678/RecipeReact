@@ -1,6 +1,6 @@
 import React from 'react';
-import RecipeInterface from '../models/RecipeInterface';
-import RecipeService from '../service/RecipeService';
+import RecipeInterface from '../../models/RecipeInterface';
+import RecipeService from '../../service/RecipeService';
 import RecipeTableEntry from './RecipeTableEntry';
 
 
