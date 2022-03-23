@@ -8,9 +8,11 @@ import RecipeSingleView from "./RecipeComponents/RecipeSingleView";
 
 function RecipeApp() {
     return (
-        <div className="recipe-app-container felxbox-container">
+        <div className="recipe-app-container">
             <BrowserRouter>
-                <Navbar />
+                <div className="container-fluid">
+                    <Navbar />
+                </div>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/Recipes" element={<RecipeListView/>} />
@@ -18,7 +20,9 @@ function RecipeApp() {
                     <Route path="/Ingredients" />
                 </Routes>
             </BrowserRouter>
-            <p>Hello Recipe App this is dummy text</p>
+            <div className="container-fluid footer">
+                <p>Hello Recipe App this is dummy text</p>
+            </div>
         </div>
     )
 }
