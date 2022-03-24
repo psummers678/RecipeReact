@@ -1,9 +1,8 @@
-import Navbar from "./Navbar";
-import '../bootstrap.css';
+import Navbar from "./Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./Home";
-import RecipeListView from "./RecipeComponents/RecipeListContainer";
-import RecipeSingleView from "./RecipeComponents/RecipeSingleView";
+import RecipeListView from "./RecipeList/RecipeListContainer";
+import RecipeSingleView from "./RecipeDetailed/RecipeSingleView";
 
 
 function RecipeApp() {
