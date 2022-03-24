@@ -1,14 +1,15 @@
 nav {
     background:rgba(0,0,0,0.3);
     width: max-content;
-    display: block; 
     display: flex; 
+    flex-direction: column;
     padding: 0.7rem 1.9rem;
     z-index: 2;
     position: fixed;
-    left: 75%;
-    transform: translateX(-50%);
-    bottom: 2rem;
+    left: 2rem;
+    /* transform: translateX(-50%); */
+    bottom: 50%;
+    transform: translateY(50%);
     gap: 0.8rem;
     border-radius: 3rem;
     backdrop-filter: blur(15px);

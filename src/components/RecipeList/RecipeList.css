@@ -1,0 +1,23 @@
+table{
+    align-items: center;
+    background: var(--color-bg-variant);
+    border-radius: 2rem;
+    border-color: var(--color-primary-variant);
+    width: 90%;
+    left: 50%;
+    /* transform: translateX(5%); */
+    margin: 2rem;
+    
+}
+th {
+    text-align: center;
+    padding: 5px;
+    color: var(--color-primary-variant);
+}
+td {
+    text-align: center;
+}
+
+.table-btn {
+    padding: 0.3rem;
+}

@@ -13,7 +13,7 @@ function RecipeTableEntry(props: RecipeEntry) {
                 <td>{recipe.rating}</td>
                 <td>{recipe.difficulty}</td>
                 <td>{Object.keys(recipe.ingredientRequirements).length}</td>
-                <td><button>Delete</button></td>
+                <td><div className="btn table-btn">Delete</div></td>
             </tr>
         </>
     )

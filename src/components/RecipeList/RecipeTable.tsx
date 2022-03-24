@@ -42,7 +42,7 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
 
     render(): React.ReactNode {
         return (
-            <table className='.col-md'>
+            <table >
                 <thead>
                     <tr>
                         <th>Recipe Name</th>
@@ -56,6 +56,15 @@ class RecipeTable extends React.Component<{}, RecipeTableState>{
                     {this.state.recipes.map((recipe) => {
                         return (<RecipeTableEntry recipe={recipe} key={recipe.recipeId} />)
                     })}
+                    <tr>
+                        <td><div className="btn sort">Sort by</div></td>
+                        <td><div className="btn sort">Sort by</div></td>
+                        <td><div className="btn sort">Sort by</div></td>
+                        <td><div className="btn sort">Sort by</div></td>
+                        <td>
+                            <div className="btn">Create New Recipe</div>
+                        </td>
+                    </tr>
                 </tbody>
             </table >
         )

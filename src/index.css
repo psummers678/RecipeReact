@@ -13,7 +13,7 @@
   --color-bg: #1f1f1f;
   --color-bg-variant: #1f1f38;
   --color-primary: #4db5ff;
-  --color-primary-variant: rgba(77,181,255,0.4);
+  --color-primary-variant: rgba(54, 139, 199, 0.788);
   --color-white: #fff;
   --color-light: rgba(255,255,255,0.6);
 
@@ -49,7 +49,8 @@ h1,h2,h3,h4,h5{
 }
 
 section {
-  margin-top: 8rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
 }
 
 section >h2, section >h5{
