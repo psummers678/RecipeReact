@@ -34,33 +34,30 @@ class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe:
 
     render(): React.ReactNode {
         let recipe = this.state.recipe;
-        return (<>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-8">
-                        <h2>{recipe.recipeName}</h2>
-                        <ul>
-                            <li>Duration: {recipe.recipeDurationMins}</li>
-                            <li>Rating: {recipe.rating}</li>
-                            <li>Difficulty: {recipe.difficulty}</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                        <ul>Ingredients
-                            {Object.entries(recipe.ingredientRequirements).map(([ingredient, amount]) => {
-                                    let [ingredientId, ingredientName] = ingredient.replaceAll('"', '').split(",");
-                                    return (
-                                        <li key={ingredientId}>{amount} of {ingredientName}</li>
-                                    )})}
-                        </ul>
-                    </div>
-                </div>
-                <div className="row">
-                    <p>{recipe.recipeBody}</p>
+        return (
+            <section>
+                <h2>{recipe.recipeName}</h2>
+                <ul>
+                    <li>Duration: {recipe.recipeDurationMins}</li>
+                    <li>Rating: {recipe.rating}</li>
+                    <li>Difficulty: {recipe.difficulty}</li>
+                </ul>
+            
+            
+                <ul>Ingredients
+                    {Object.entries(recipe.ingredientRequirements).map(([ingredient, amount]) => {
+                        let [ingredientId, ingredientName] = ingredient.replaceAll('"', '').split(",");
+                        return (
+                            <li key={ingredientId}>{amount} of {ingredientName}</li>
+                        )
+                    })}
+                </ul>
 
-                </div>
-            </div>
-        </>
+                <p>{recipe.recipeBody}</p>
+
+
+        </section>
+
         )
     }
 }
