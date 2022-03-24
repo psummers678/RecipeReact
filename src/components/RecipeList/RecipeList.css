@@ -1,6 +1,6 @@
 table{
     align-items: center;
-    background: var(--color-bg-variant);
+    background: rgba(0,0,0,0.3);
     border-radius: 2rem;
     border-color: var(--color-primary-variant);
     width: 90%;
@@ -20,4 +20,8 @@ td {
 
 .table-btn {
     padding: 0.3rem;
+}
+
+.btn {
+    margin-bottom: 1rem;
 }
