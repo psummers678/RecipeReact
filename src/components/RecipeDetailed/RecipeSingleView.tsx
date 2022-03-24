@@ -6,7 +6,7 @@ import './RecipeDetailedView.css'
 
 function RecipeSingleView() {
     return (
-        <section>
+        <section className="recipe-single">
             <h2>Recipe {useParams().id} </h2>
             <RecipeDetailedView recipeId={Number(useParams().id)} />
             <RecipeListSidebar />

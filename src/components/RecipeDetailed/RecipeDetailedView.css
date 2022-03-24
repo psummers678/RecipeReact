@@ -1,3 +1,41 @@
+.recipe-block {
+		display: flex;
+}
+.recipe-title {
+	width: 100%;
+}
+.ingredient-list{
+	text-align: center;
+	margin: 0.3rem;
+	/* background: rgba(0,0,0,0.3); */
+	border-radius: var(--border-radius);
+	padding: 1rem;
+	width: 40%;
+
+}
+
+.recipe-single{
+	background-color: var(--color-bg-variant);
+	border-radius: 2rem;
+	padding: 2rem;
+
+}
+.summary-block {
+	display: flex;
+}
+
+.summary-field {
+	margin: 0.2 rem;
+	margin-right: 5rem;
+	font-weight: 400;
+}
+
+.recipe-steps {
+	background: rgba(0,0,0,0.3);
+	border-radius: var(--border-radius);
+	padding: 2rem;
+}
+
 .recipelistsidebar {
 	display:flex;
 	flex-direction: column;
