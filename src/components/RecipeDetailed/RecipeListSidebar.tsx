@@ -1,12 +1,13 @@
 import React from "react"
 import { ReactNode } from "react"
 import RecipeService from "../../service/RecipeService";
-interface RecipeReducedInterface {
-  recipes: { recipeId: number, recipeName: String, }[]
+interface RecipeSummaryInterface {
+  recipeId: number,
+  recipeName: String
 }
 
-class RecipeListSidebar extends React.Component<any, RecipeReducedInterface> {
-  constructor(props: any) {
+class RecipeListSidebar extends React.Component<{}, { recipes: RecipeSummaryInterface[] }> {
+  constructor(props:{}) {
     super(props);
     this.state = {
       recipes: []
@@ -18,29 +19,29 @@ class RecipeListSidebar extends React.Component<any, RecipeReducedInterface> {
   }
 
   retrieveRecipeList() {
-    let newRecipeList: RecipeReducedInterface = {recipes: []};
+    let newRecipeList: RecipeSummaryInterface[] = [];
     RecipeService.retrieveAllRecipes().then(
       response => {
-        response.data.map((retrievedRecipe: any) => {
-          newRecipeList.recipes.push({
+        response.data.forEach((retrievedRecipe: RecipeSummaryInterface) => {
+          newRecipeList.push({
             recipeId: retrievedRecipe.recipeId,
             recipeName: retrievedRecipe.recipeName,
           })
+        });
+        this.setState({
+          recipes: newRecipeList
         })
-        this.setState(newRecipeList)
       }
     )
-
   }
+
   render(): ReactNode {
-    let recipes = this.state.recipes
+    let recipes: RecipeSummaryInterface[] = this.state.recipes
     return (
       <>
         <div className="recipelistsidebar">
           List Of Recipes
-          {console.log(recipes)}
-          {recipes.map(recipe => {
-            console.log("Render Hello" + recipe.recipeId)
+          {recipes.map((recipe: RecipeSummaryInterface) => {
             return (<a key={recipe.recipeId} href={"./" + recipe.recipeId}>{recipe.recipeName}</a>)
           })}
         </div>
