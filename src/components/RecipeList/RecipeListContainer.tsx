@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeTable from './RecipeTable';
+import RecipeTable from './RecipeTable'
 import './RecipeList.css'
 
 class RecipeListView extends React.Component<{}, {}>{

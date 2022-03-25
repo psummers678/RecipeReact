@@ -3,6 +3,7 @@ import RecipeInterface from "../../models/RecipeInterface";
 interface RecipeEntry {
     recipe: RecipeInterface
 }
+
 function RecipeTableEntry(props: RecipeEntry) {
     let recipe = props.recipe;
     return (

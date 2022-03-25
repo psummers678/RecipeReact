@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import IngredientService from "../../service/IngredientService";
-import TableComponent from "../TableComponent";
+import TableComponent from "../abstract/Table/TableComponent";
 
 class IngredientTable extends TableComponent {
 
@@ -9,7 +9,8 @@ class IngredientTable extends TableComponent {
             tableHeaders: [
                 "Ingredient Name",
                 "Ingredient Price",
-                "Ingredient THIS"
+                "Ingredient Type",
+                "Shop"
             ]
         })
     }

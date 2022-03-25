@@ -1,5 +1,5 @@
-
 import React from 'react';
+import './Table.css'
 
 abstract class RecipeTable extends React.Component<any, any>{
 
@@ -15,7 +15,7 @@ abstract class RecipeTable extends React.Component<any, any>{
         this.retrieveTableEntries();
         this.setTableHeaders();
     }
-
+    
     abstract setTableHeaders(): void;
 
     abstract retrieveTableEntries(): void;
@@ -38,9 +38,9 @@ abstract class RecipeTable extends React.Component<any, any>{
                     {this.state.tableEntries.map((tableEntry: any) => {
                         return (this.createTableEntry(tableEntry))
                     })}
-                    
-                        {this.createTableButtons()}
-                    
+
+                    {this.createTableButtons()}
+
                 </tbody>
             </table >
         )

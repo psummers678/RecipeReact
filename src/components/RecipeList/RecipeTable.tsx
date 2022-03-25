@@ -2,9 +2,10 @@ import React from 'react';
 import RecipeInterface from '../../models/RecipeInterface';
 import RecipeService from '../../service/RecipeService';
 import RecipeTableEntry from './RecipeTableEntry';
-import TableComponent from '../TableComponent'
+import TableComponent from '../abstract/Table/TableComponent'
 
 class RecipeTable extends TableComponent {
+
     setTableHeaders(): void {
         this.setState({
             tableHeaders: [
@@ -16,6 +17,7 @@ class RecipeTable extends TableComponent {
             ]
         })
     }
+    
     retrieveTableEntries(): void {
         RecipeService.retrieveAllRecipes().then(
             response => {
@@ -27,19 +29,21 @@ class RecipeTable extends TableComponent {
     }
 
     createTableButtons(): JSX.Element {
-        return (
-            <tr>
-                <td><div className="btn sort">Sort by</div></td>
-                <td><div className="btn sort">Sort by</div></td>
-                <td><div className="btn sort">Sort by</div></td>
-                <td><div className="btn sort">Sort by</div></td>
-                <td><div className="btn">Create New Recipe</div></td>
-            </tr>
+        return (<></>
+            // <tr>
+            //     <td><div className="btn sort">Sort by</div></td>
+            //     <td><div className="btn sort">Sort by</div></td>
+            //     <td><div className="btn sort">Sort by</div></td>
+            //     <td><div className="btn sort">Sort by</div></td>
+            //     <td><div className="btn">Create New Recipe</div></td>
+            // </tr>
         )
     }
 
     createTableEntry(tableEntry: RecipeInterface): JSX.Element {
-        return (<RecipeTableEntry recipe={tableEntry} key={tableEntry.recipeId} />)
+        return (
+            <RecipeTableEntry recipe={tableEntry} key={tableEntry.recipeId} />
+        )
     }
 
 }
