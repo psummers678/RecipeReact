@@ -7,6 +7,7 @@ interface IngredientInterface{
     shelfLifeUnit: string,
     shopName: string,
     foodType: string,
+    storageType: string,
 }
 
 export default IngredientInterface

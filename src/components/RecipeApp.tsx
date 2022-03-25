@@ -3,19 +3,20 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./Home";
 import RecipeListView from "./RecipeList/RecipeListContainer";
 import RecipeSingleView from "./RecipeDetailed/RecipeSingleView";
-import {IngredientListContainer} from "./IngredientList/IngredientListContainer";
-
+import { IngredientListContainer } from "./IngredientList/IngredientListContainer";
+import IngredientSingleView from "./IngredientDetailed/IngredientSingleView";
 
 function RecipeApp() {
     return (
         <div className="container">
             <BrowserRouter>
-                    <Navbar />
+                <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />}/>
-                    <Route path="/Recipes" element={<RecipeListView/>} />
-                    <Route path="/Recipes/:id" element={<RecipeSingleView/>} />
-                    <Route path="/Ingredients" element={<IngredientListContainer/>} /> 
+                    <Route path="/" element={<Home />} />
+                    <Route path="/Recipes" element={<RecipeListView />} />
+                    <Route path="/Recipes/:id" element={<RecipeSingleView />} />
+                    <Route path="/Ingredients" element={<IngredientListContainer />} />
+                    <Route path="/Ingredients/:id" element={<IngredientSingleView />}/>
                 </Routes>
             </BrowserRouter>
         </div>

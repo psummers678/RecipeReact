@@ -2,9 +2,9 @@ import axios from "axios"
 
 const BASE_URL: string = 'http://localhost:8090/recipe/api/v1'
 
-class RecipeService {
+class IngredientService {
 
-    static GetRecipeById(id: any) {
+    static GetIngredientById(id: any) {
         return axios.get(`${BASE_URL}/ingredient/GetIngredient/${id}`);
     }
 
@@ -14,4 +14,4 @@ class RecipeService {
 
 }
 
-export default RecipeService;
+export default IngredientService;
