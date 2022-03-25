@@ -1,0 +1,11 @@
+input {
+    color: var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
