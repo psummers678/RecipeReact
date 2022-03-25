@@ -38,9 +38,9 @@ abstract class RecipeTable extends React.Component<any, any>{
                     {this.state.tableEntries.map((tableEntry: any) => {
                         return (this.createTableEntry(tableEntry))
                     })}
-                    <tr>
+                    
                         {this.createTableButtons()}
-                    </tr>
+                    
                 </tbody>
             </table >
         )

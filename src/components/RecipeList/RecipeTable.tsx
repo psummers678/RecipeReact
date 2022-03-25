@@ -2,72 +2,46 @@ import React from 'react';
 import RecipeInterface from '../../models/RecipeInterface';
 import RecipeService from '../../service/RecipeService';
 import RecipeTableEntry from './RecipeTableEntry';
+import TableComponent from '../TableComponent'
 
-
-
-interface RecipeTableState {
-    recipes: RecipeInterface[],
-}
-
-class RecipeTable extends React.Component<{}, RecipeTableState>{
-
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            recipes: [{
-                recipeId: 1,
-                recipeName: "Dummy",
-                recipeDurationMins: 5,
-                recipeBody: "Blah",
-                ingredientRequirements: [],
-                rating: "FIVE",
-                difficulty: "FOUR",
-            }],
-        };
+class RecipeTable extends TableComponent {
+    setTableHeaders(): void {
+        this.setState({
+            tableHeaders: [
+                "Recipe Name",
+                "Recipe Duration",
+                "Recipe Rating",
+                "Recipe Difficulty",
+                "Number of Ingredients",
+            ]
+        })
     }
-
-    componentDidMount(): void {
-        this.retrieveAllRecipes();
-    }
-
-    retrieveAllRecipes(): void {
+    retrieveTableEntries(): void {
         RecipeService.retrieveAllRecipes().then(
             response => {
                 //ingredientRequirements seem is {String string} still
                 this.setState({
-                    recipes: response.data
+                    tableEntries: response.data
                 })
             })
     }
 
-    render(): React.ReactNode {
+    createTableButtons(): JSX.Element {
         return (
-            <table >
-                <thead>
-                    <tr>
-                        <th>Recipe Name</th>
-                        <th>Recipe Duration</th>
-                        <th>Recipe Rating</th>
-                        <th>Recipe Difficulty</th>
-                        <th>Number of Ingredients</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.recipes.map((recipe) => {
-                        return (<RecipeTableEntry recipe={recipe} key={recipe.recipeId} />)
-                    })}
-                    <tr>
-                        <td><div className="btn sort">Sort by</div></td>
-                        <td><div className="btn sort">Sort by</div></td>
-                        <td><div className="btn sort">Sort by</div></td>
-                        <td><div className="btn sort">Sort by</div></td>
-                        <td>
-                            <div className="btn">Create New Recipe</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table >
+            <tr>
+                <td><div className="btn sort">Sort by</div></td>
+                <td><div className="btn sort">Sort by</div></td>
+                <td><div className="btn sort">Sort by</div></td>
+                <td><div className="btn sort">Sort by</div></td>
+                <td><div className="btn">Create New Recipe</div></td>
+            </tr>
         )
     }
+
+    createTableEntry(tableEntry: RecipeInterface): JSX.Element {
+        return (<RecipeTableEntry recipe={tableEntry} key={tableEntry.recipeId} />)
+    }
+
 }
+
 export default RecipeTable
