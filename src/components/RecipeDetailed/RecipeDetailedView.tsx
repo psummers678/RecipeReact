@@ -1,6 +1,8 @@
 import React from "react";
+import IngredientSummary from "../../models/IngredientSummary";
 import RecipeInterface from "../../models/RecipeInterface";
 import RecipeService from "../../service/RecipeService";
+
 
 class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe: RecipeInterface }> {
     constructor(props: { recipeId: number }) {
@@ -22,7 +24,7 @@ class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe:
         this.retrieveRecipe()
     }
 
-    retrieveRecipe() {
+    retrieveRecipe(): void {
         RecipeService.GetRecipeById(this.state.recipe.recipeId).then(
             response => {
                 this.setState({
@@ -32,21 +34,21 @@ class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe:
         )
     }
 
-    parseIngredient(stringIngredient: string) {
-        let recipeIngredient: {ingredientId:number, ingredientName:string} = {
+    parseIngredient(stringIngredient: string): IngredientSummary {
+        let recipeIngredient: IngredientSummary = {
             ingredientId: 0,
             ingredientName: ""
         };
-        let adjustedString = stringIngredient.replace("{", "").replace("}", "")
-        adjustedString.split(",").map((ingredientField) => {
-            let [key, value] = ingredientField.replaceAll('"', '').split(':')
+        let adjustedString: string = stringIngredient.replace("{", "").replace("}", "")
+        adjustedString.split(",").forEach((ingredientField: string) => {
+            let [key, value]: string[] = ingredientField.replaceAll('"', '').split(':')
             Object.assign(recipeIngredient, { [key]: value })
-        })
+        });
         return recipeIngredient;
     }
 
     render(): React.ReactNode {
-        let recipe = this.state.recipe;
+        let recipe: RecipeInterface = this.state.recipe;
         return (<>
             <div className="recipe-block">
                 <section className="recipe-title">
@@ -59,8 +61,7 @@ class RecipeDetailedView extends React.Component<{ recipeId: number }, { recipe:
                 </section>
                 <ul className="ingredient-list">Ingredients
                     {Object.entries(recipe.ingredientRequirements).map(([ingredient, amount]) => {
-                        let parsedIngredient = this.parseIngredient(ingredient);
-                        console.log(parsedIngredient)
+                        let parsedIngredient: IngredientSummary = this.parseIngredient(ingredient);
                         return (
                             <li key={parsedIngredient.ingredientId}>{amount} of {parsedIngredient.ingredientName}</li>
                         )

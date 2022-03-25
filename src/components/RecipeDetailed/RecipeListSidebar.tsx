@@ -1,10 +1,8 @@
 import React from "react"
 import { ReactNode } from "react"
+import RecipeSummaryInterface from "../../models/RecipeSummaryInterface";
 import RecipeService from "../../service/RecipeService";
-interface RecipeSummaryInterface {
-  recipeId: number,
-  recipeName: String
-}
+
 
 class RecipeListSidebar extends React.Component<{}, { recipes: RecipeSummaryInterface[] }> {
   constructor(props:{}) {

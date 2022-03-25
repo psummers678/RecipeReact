@@ -1,11 +1,7 @@
 import React from "react";
 import { ReactNode } from "react";
+import IngredientSummary from "../../models/IngredientSummary";
 import IngredientService from "../../service/IngredientService";
-
-interface IngredientSummary {
-    ingredientId: number,
-    ingredientName: string,
-}
 
 class IngredientListSidebar extends React.Component<{}, { sidebar: IngredientSummary[] }> {
     constructor(props: {}) {

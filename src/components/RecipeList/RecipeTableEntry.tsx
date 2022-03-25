@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import RecipeInterface from "../../models/RecipeInterface";
-interface RecipeEntry {
-    recipe: RecipeInterface
-}
 
-function RecipeTableEntry(props: RecipeEntry) {
+function RecipeTableEntry(props:{recipe:RecipeInterface}) {
     let recipe = props.recipe;
     return (
         <>
