@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./Home";
 import RecipeListView from "./RecipeList/RecipeListContainer";
 import RecipeSingleView from "./RecipeDetailed/RecipeSingleView";
-import IngredientListContainer from "./IngredientList/IngredientListContainer";
+import {IngredientListContainer} from "./IngredientList/IngredientListContainer";
 
 
 function RecipeApp() {
