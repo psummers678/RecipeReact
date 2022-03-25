@@ -16,7 +16,7 @@ class IngredientTable extends TableComponent {
     }
 
     retrieveTableEntries(): void {
-        IngredientService.retrieveAllIngredients().then(
+        new IngredientService().retrieveAllIngredients().then(
             (response) => this.setState({
                 tableEntries: response.data
             })

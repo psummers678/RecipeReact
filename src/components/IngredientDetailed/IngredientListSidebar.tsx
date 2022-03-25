@@ -20,7 +20,7 @@ class IngredientListSidebar extends React.Component<{}, { sidebar: IngredientSum
     }
     retrieveSidebarList(): void {
         let sidebarList: any = { sidebar: [] };
-        IngredientService.retrieveAllIngredients().then(
+        new IngredientService().retrieveAllIngredients().then(
             response => {
                 response.data.forEach((retrievedIngredient: IngredientSummary) => {
                     sidebarList.sidebar.push({

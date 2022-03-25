@@ -24,7 +24,8 @@ class IngredientDetailedView extends Component <{ingredientId:number}, {ingredie
   }
 
   retrieveIngredient():void {
-        IngredientService.GetIngredientById(this.state.ingredient.ingredientId).then(
+        let ingredientService = new IngredientService();
+        ingredientService.GetIngredientById(this.state.ingredient.ingredientId).then(
             (response) =>{
                 this.setState({
                     ingredient: response.data
